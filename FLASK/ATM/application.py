@@ -20,6 +20,11 @@ def index():
 
 	if request.method == "POST":
 
+        # Checks if amount field is empty
+		if request.form["amount"] == "" :
+			msg = "Amount is required"
+			return render_template("index.html", balance=balance, msg=msg)
+			
 		# Checks if amount entered is negative
 		if int(request.form["amount"]) < 0 :
 			msg = "Cannot enter negative amount"

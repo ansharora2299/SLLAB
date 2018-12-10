@@ -26,6 +26,11 @@
 			{
 				var form = document.getElementById("atm");
 
+                // Checks if amount field is empty
+				if (form.amount.value == "" ) {
+					alert("Amount required");
+					return false;
+				}
 				// Checks if amount entered is negative
 				if (parseInt(form.amount.value) < 0) {
 					alert("Cannot enter negative amount");
