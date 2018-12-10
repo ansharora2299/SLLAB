@@ -36,11 +36,20 @@ plt.show()
 ax = sns.countplot(x="race/ethnicity", hue="gender", palette="Set1", data=student_df1)
 ax.set(title="Students according to each group", xlabel="Ethnicity", ylabel="Total")
 plt.show()
-'''
+
 marks_intervals = [0, 40, 50, 60, 75]
 categories = ['failed', 'second class', 'first class', 'distinction']
-student_df1['Marks_Categories'] = pd.cut(student_df1.mathscore, marks_intervals, labels=categories)
-ax = sns.countplot(x="Marks_Categories", hue="gender", palette="Set1", data=student_df1)
+student_df1['Marks_Categories_math'] = pd.cut(student_df1.mathscore, marks_intervals, labels=categories)
+ax = sns.countplot(x="Marks_Categories_math", hue="gender", palette="Set1", data=student_df1)
 ax.set(title="Math Marks Grouping", xlabel="Marks Groups", ylabel="Total")
 plt.show()
-'''
+
+student_df1['Marks_Categories_reading'] = pd.cut(student_df1.readingscore, marks_intervals, labels=categories)
+ax = sns.countplot(x="Marks_Categories_reading", hue="gender", palette="Set1", data=student_df1)
+ax.set(title="Reading Marks Grouping", xlabel="Marks Groups", ylabel="Total")
+plt.show()
+
+student_df1['Marks_Categories_writing'] = pd.cut(student_df1.writingscore, marks_intervals, labels=categories)
+ax = sns.countplot(x="Marks_Categories_writing", hue="gender", palette="Set1", data=student_df1)
+ax.set(title="Writing Marks Grouping", xlabel="Marks Groups", ylabel="Total")
+plt.show()
