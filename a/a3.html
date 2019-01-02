@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <body>
-enter a sentence <input type="text" id="in1"></br>
+enter a sentence <textarea rows="4" cols="50" id="in1"></textarea></br>
 <input type="button" value="get longest word" onclick="longe()"></br>
-<p>longest word :
+<p>longest word(s) :
 <p id="res"></p>
 </p>
 <script>
@@ -12,7 +12,13 @@ function longe()
 var val=document.getElementById("in1").value.split(' ');
 var maxi=val[0];
 val.forEach(function(v){if(v.length>maxi.length) maxi=v;});
-document.getElementById("res").innerHTML=maxi+' length is: '+maxi.length;
+var p="";
+for(i=0;i<val.length;i++)
+{
+if(val[i].length==maxi.length)
+p=p+" "+val[i];
+}
+document.getElementById("res").innerHTML=p+' length is: '+maxi.length;
 }
 </script>
 </body>
