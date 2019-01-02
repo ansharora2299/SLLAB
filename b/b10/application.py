@@ -12,7 +12,7 @@ def trykare():
 	if request.method == "POST":
 
 		#Check if form fields are empty
-		if request.form["usn"] == "" or request.form["dob"] == "" :
+		if request.form["usn"] == "" or request.form["dob"] == "" or request.form["m1"] == "" or request.form["m2"] == "" or request.form["m3"] == "" :
 			msg = "All form fields are required"
 			return render_template("indexJS.html", msg=msg)
 
@@ -33,7 +33,8 @@ def trykare():
 			return render_template("indexJS.html", msg=msg)
 
 		#If form fields are valid return success HTML page
-		return render_template("success.html")
+		avg=(int(request.form["m1"])+int(request.form["m2"])+int(request.form["m3"]))/3
+		return render_template("success.html",avg=avg)
 
 if __name__ == '__main__':
 	app.run()

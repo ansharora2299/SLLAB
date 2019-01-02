@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>Enter Numbers</p><br>
+Number 1 <input type="number" id="num1" required><br>
+Number 2 <input type="number" id="num2" required><br>
+<input type="radio" name="op" id="r1" >Add
+<input type="radio" name="op" id="r2" >Sub
+<input type="radio" name="op" id="r3" >Mul
+<input type="radio" name="op" id="r4" >Div
+<button type="button" onclick="calc()" >submit</button>
+<p id="res">The Result is: </p>
+<script>
+var x,y;
+function calc(){
+if(document.getElementById("r1").checked)
+{
+x = parseInt(document.getElementById("num1").value);
+y= parseInt(document.getElementById("num2").value);
+document.getElementById("res").innerHTML=x+y;
+}
+else if(document.getElementById("r2").checked)
+{
+x = parseInt(document.getElementById("num1").value);
+y= parseInt(document.getElementById("num2").value);
+document.getElementById("res").innerHTML=x-y;
+}
+else if(document.getElementById("r3").checked)
+{
+x = parseInt(document.getElementById("num1").value);
+y= parseInt(document.getElementById("num2").value);
+document.getElementById("res").innerHTML=x*y;
+}
+else if(document.getElementById("r4").checked)
+{
+x = parseInt(document.getElementById("num1").value);
+y= parseInt(document.getElementById("num2").value);
+if(y==0)
+{
+document.getElementById("res").innerHTML='divide by zero error';
+}
+else{
+document.getElementById("res").innerHTML=x/y;
+}}
+else{
+document.getElementById("res").innerHTML='mark plz';
+}
+}
+</script>
+</body>
+</html>

@@ -15,6 +15,10 @@
 		<form action="{{url_for('trykare')}}" method="POST" >
 		 	USN (Eg. 1MS02IS001): <input name = "usn" type="text" /><br>
 		  	D.O.B (Eg. dd/mm/yyyy) : <input name = "dob" type="text" /><br>
+		  	Enter Marks for 3 Subjects<br><br>
+		  	<input name="m1" type="number" min=0 max=100 />
+		  	<input name="m2" type="number" min=0 max=100 />
+		  	<input name="m3" type="number" min=0 max=100 /><br>
 			<input name = "Register" type = "submit" />
 		</form>
 
