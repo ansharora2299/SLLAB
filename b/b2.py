@@ -17,7 +17,7 @@ class SentenceReverser:
 items = []
 
 for i in range(3):
-	sentence = input("Enter a phrase : ")
+	sentence = input("Enter a phrase :")
 	reverser = SentenceReverser(sentence.strip())
 	items.append(reverser)
 	print(reverser.reverse)

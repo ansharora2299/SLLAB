@@ -3,7 +3,6 @@ import os
 from functools import reduce
 
 dict={}
-wordLen=[]
 
 if(len(sys.argv)!=2):
 	print("Invalid arguments")

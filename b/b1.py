@@ -1,31 +1,32 @@
-mylist=[]
-mylist2=[]
-def FtoC(far):
-    cel=(far-32)*5/9
-    mytuple=(far,cel)
-    mylist.append(mytuple)
-    print("From F to C is: ")
-    print(mytuple)
+def ctof(c):
+  f=(9/5)*c+32
+  print(f)
+  return f
 
-def CtoF(cel):
-    far=cel*1.8+32
-    mytuple=(cel,far)
-    mylist2.append(mytuple)
-    print("\nFrom C to F is:\n")
-    print(mytuple)
+def ftoc(f):
+    c=(f-32)*5/9
+    print(c)
+    return c
 
-while(1):
-    ans=int(input("1.Convert Celsius to Farenheit \n2.Convert Farenheit to Celsius \n3.Display \n4.Exit\n"))
-    if(ans==1):
-        c=float(input("Enter Celsius temperature: "))
-        CtoF(c)
-    elif(ans==2):
-        f=float(input("Enter Farhenheit temperature: "))
-        FtoC(f)
-    elif(ans==3):
-        print(mylist)
-        print(mylist2)
-    elif(ans is 4):
-        exit(0)
+n=0
+st=[]
+while n!=4:
+    n=int(input("1 for ctof\n2 for ftoc\n3 for history\n4 for exit\n"))
+    if n==1:
+        c=float(input("Enter c\n"))
+        st.append((c,ctof(c)))
+    elif n==2:
+        f=float(input("Enter f\n"))
+        st.append((f,ftoc(f)))
+    elif n==3:
+        sort_by=int(input("Sort by from (1)\nSort by to (2)\n"))
+        if sort_by==1:
+            print(sorted(st,key=(lambda x:x[0])))
+        elif sort_by==2:
+            print(sorted(st,key=(lambda x:x[1])))
+        else:
+            print(st)
+    elif n==4:
+        exit()
     else:
-        print("\nInvalid\n")
+        print("Invalid choice")
